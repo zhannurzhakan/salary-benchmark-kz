@@ -55,7 +55,7 @@ function renderSnap() {
       <label>Разрез <select id="sd"><option value="ind" ${isInd ? 'selected' : ''}>по отраслям</option><option value="reg" ${!isInd ? 'selected' : ''}>по регионам</option></select></label>
       <span class="note" style="margin:0">Фильтры слева (отрасль / регион) применяются к таблице. Нажмите на строку — добавить на график.</span>
       <button id="scsv" style="margin-left:auto">Скачать CSV</button></div>
-      <div class="grid g2"><div class="tw" style="max-height:520px"><table><thead><tr><th class="l">${isInd ? 'Отрасль' : 'Регион'}</th><th>${qLabel(per)}</th><th>к пред. кв.</th><th>к году назад</th><th>к РК</th><th class="l">динамика</th></tr></thead><tbody>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(560px,1fr))"><div class="tw" style="max-height:520px"><table><thead><tr><th class="l">${isInd ? 'Отрасль' : 'Регион'}</th><th>${qLabel(per)}</th><th>к пред. кв.</th><th>к году назад</th><th>к РК</th><th class="l">динамика</th></tr></thead><tbody>
       ${list.map(x => `<tr data-k="${esc(x.k)}" style="cursor:pointer;${SNAP.pick.has(x.k) ? 'background:var(--chip)' : ''}"><td>${esc(x.k)}</td><td class="med">${fmt(x.v)}</td>${chg(x.qoq)}${chg(x.yoy)}<td>${x.vs ? '×' + x.vs.toFixed(2).replace('.', ',') : '—'}</td><td class="l">${spark(x.ser)}</td></tr>`).join('') || '<tr><td colspan="6" class="empty">Нет данных по этим фильтрам</td></tr>'}</tbody></table></div>
       <div>${legend(chartSeries)}${lineChart({series: chartSeries, xs: quarters.map(qLabel), W: 640, H: 340})}</div></div></div>
     <div class="card" id="vsnap"></div>
