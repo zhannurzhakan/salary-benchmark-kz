@@ -1,0 +1,18 @@
+{
+  "db_path": "data/salary.db",
+  "user_agent": "SalaryBenchmark/0.1 (contact: set-your-email-in-config.json)",
+  "min_sample": 5,
+  "sanity_bounds_kzt_month": [70000, 8000000],
+  "net_to_gross_factor": 0.83,
+  "fx_to_kzt": {"KZT": 1, "USD": 520, "EUR": 600, "RUR": 6.5, "RUB": 6.5},
+  "hh": {
+    "area": 40,
+    "days": 30,
+    "per_page": 100,
+    "request_delay_sec": 0.4,
+    "fetch_employers": true,
+    "fetch_details": false
+  },
+  "qsamruk": {"max_pages": 200, "request_delay_sec": 1.0},
+  "stat": {"min_year": 2022, "request_delay_sec": 1.0, "extra_publications": [["509385", 2025, 0]]}
+}

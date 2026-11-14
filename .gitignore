@@ -1,0 +1,5 @@
+data/*.db
+data/hh_token.json
+output/
+__pycache__/
+data/cache/
